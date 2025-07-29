@@ -5,7 +5,7 @@ This repository implements the full analysis pipeline from our study:
 mainly including sRNA expression processing, statistical analysis, HAMD-17 severity prediction, and multi-objective model prioritization (MOMP)-based classifier design.
 
 
-插入图片   
+
 
 
 ## Project Structure
@@ -18,12 +18,12 @@ sRNA-MDD-diagnosis/
 │   ├── MOMP modeling/            # MOMP framework
 │   ├── Feature selection/        # Establishment of optimized circulating sRNA panel
 │   ├── RT-qPCR validation        # Diagnostic scoring
-│   ├── Network and pathway analysis        # 预测基因的通路enrichment与可视化
+│   ├── Network and pathway analysis        # Pathway enrichment and visualization
 ├── Sample results/                      # Sample output files, figures, or tables
-├── References/                   # References and citations
+├── References/                   # Literature and tool citations
 ├── README.md                     # Project overview
-├── Requirements.txt              # Dependencies
-└── Environment.md                # 涉及到的环境以及软件
+├── Requirements.txt              # Python dependencies (via pip)
+└── Environment.md                # Full software environment (including R/tools)
 ```
 
 ## Pipeline Summary
