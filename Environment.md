@@ -1,4 +1,4 @@
-# 🧪 Environment.md
+# Environment.md
 **Project**: *sRNA-MDD-Diagnosis*  
 **Purpose**: Document software tools, environments, and dependencies used in the analysis pipeline for reproducibility.
 
@@ -15,7 +15,7 @@ conda activate mdd-srna
 pip install -r requirements.txt
 ```
 
-### 📦 Key Python Packages
+### Key Python Packages
 
 | Package         | Recommended Version | Description                                      |
 |----------------|---------------------|--------------------------------------------------|
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📒 2. Jupyter Notebook Environment
+## 2. Jupyter Notebook Environment
 
 Jupyter notebooks are run within the configured Python environment.
 
@@ -46,11 +46,11 @@ Ensure the following package is installed: `notebook` or `jupyterlab`.
 
 ---
 
-## 🧬 3. R Environment
+## 3. R Environment
 
 - **Version**: R 4.4.1 (recommended)
 
-### 📦 Key R Packages
+### Key R Packages
 
 | Package              | Description                                    |
 |----------------------|------------------------------------------------|
@@ -61,7 +61,7 @@ Ensure the following package is installed: `notebook` or `jupyterlab`.
 
 ---
 
-## 🧬 4. Small RNA Annotation & Preprocessing Tools
+## 4. Small RNA Annotation & Preprocessing Tools
 
 ### miRDeep2
 - **Version**: v2.0.1.2
@@ -79,7 +79,7 @@ Ensure the following package is installed: `notebook` or `jupyterlab`.
 
 ---
 
-## 🔬 5. Target Prediction & Enrichment Analysis
+## 5. Target Prediction & Enrichment Analysis
 
 ### miRanda
 - **Version**: v3.3a
@@ -93,7 +93,7 @@ Ensure the following package is installed: `notebook` or `jupyterlab`.
 
 ---
 
-## 🌐 6. Network Visualization
+## 6. Network Visualization
 
 ### Cytoscape
 - **Version**: v3.10.3
@@ -102,7 +102,7 @@ Ensure the following package is installed: `notebook` or `jupyterlab`.
 
 ---
 
-## ✅ Summary Table
+## Summary Table
 
 | Tool/Language     | Type          | Platform         | Purpose                                   |
 |------------------|---------------|------------------|-------------------------------------------|
