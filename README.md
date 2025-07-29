@@ -4,7 +4,7 @@ This repository implements the full analysis pipeline from our study:
 **"Circulating Small RNA Signature for Diagnosis of Major Depressive Disorder"**,  
 mainly including sRNA expression processing, statistical analysis, HAMD-17 severity prediction, and multi-objective model prioritization (MOMP)-based classifier design.
 
-![Overview](Sample results/Fig/Overview.jpg)   
+![Overview](./Overview.jpg)   
 
 
 
