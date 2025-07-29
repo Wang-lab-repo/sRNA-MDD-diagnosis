@@ -1,40 +1,119 @@
-# MDD-sRNA Diagnostic Modeling Framework
+# 🧠 sRNA-MDD-Diagnostic
 
-This project implements the full pipeline described in the paper "Circulating Small RNA signature for Diagnosis of Major Depressive Disorder", including small RNA expression processing, statistical analysis, HAMD-17 prediction modeling via Elastic net regression, and multi-objective model prioritization (MOMP)-based classifier design.  
+This repository implements the full analysis pipeline from our study:  
+**"Circulating Small RNA Signature for Diagnosis of Major Depressive Disorder"**,  
+mainly including sRNA expression processing, statistical analysis, HAMD-17 severity prediction, and multi-objective model prioritization (MOMP)-based classifier design.
 
-## 1. Project Structure
+
+插入图片   
+
+
+## Project Structure
 ```
-MDD-sRNA-Diagnostic/
-├── data/                         # Sample data. Fully preprocessed data matrices can be accessed via the Supplementary materials.
-├── notebooks/                    # Jupyter notebooks for analysis
-├── scripts&notebooks/                      # Python scripts or Jupyter notebooks for analysis
-│   ├── preprocessing/            # Data filtering, normalization, annotation
-│   ├── modeling/                 # MOMP optimization, ML model training
-│   ├── validation/               # Cross-validation, AUC computation
-│   ├── feature_selection/        # SHAP, clustering, forward selection
-│   └── rt_qpcr_modeling/         # RT-qPCR validation and final scoring
-├── results/                      # Output files, figures, and tables
-├── models/                       # Trained models
-├── references/                   # References and citations
+sRNA-MDD-diagnosis/
+├── Scripts & Notebooks/          # Python scripts, Jupyter notebooks or markdown for analysis
+│   ├── Preprocessing/            # Sequence alignment, annotation, and quality control filtering
+│   ├── Differential expression/  # MDD vs. other groups
+│   ├── HAMD regression/          # Spearman correlation and HAMD-17 prediction modeling via Elastic net regression 
+│   ├── MOMP modeling/            # MOMP framework
+│   ├── Feature selection/        # Establishment of optimized circulating sRNA panel
+│   ├── RT-qPCR validation        # Diagnostic scoring
+│   ├── Network and pathway analysis        # 预测基因的通路enrichment与可视化
+├── Sample results/                      # Sample output files, figures, or tables
+├── References/                   # References and citations
 ├── README.md                     # Project overview
-└── requirements.txt              # Python dependencies
+├── Requirements.txt              # Dependencies
+└── Environment.md                # 涉及到的环境以及软件
 ```
-# How to run  
 
-To run it on your own computer: 
-1. Install Python以及相关依赖项
-3. Clone this repository
-4. run the Jupyter Notbook Back_averaging_myoclonus.ipynb
-  - from terminal: https://jupyter.readthedocs.io/en/latest/running.html
-  - alternative for Mac users: https://nteract.io/desktop
+## Pipeline Summary
 
-# Dependencies
-mne:           0.14
-numpy:         1.11.3
-scipy:         0.19.0
-matplotlib:    1.5.1
+### 1. **Small RNA Preprocessing**
+- Adapter trimming, quality filtering
+- Mapping to known databases: miRBase, GtRNAdb, the rRNA database from NCBI, piRBase
+- Normalization and filtering
 
-sklearn:       0.18.1
-nibabel:       2.1.0
-mayavi:        4.5.0
-pandas:        0.19.2
+### 2. **Differential Expression Analysis**
+- Mann–Whitney U test
+- FDR correction (Benjamini-Hochberg)
+- FC > 1.5 or < 0.67, adjusted p < 0.05
+
+### 3. **Enrichment Analysis**
+- Predicted target genes of sRNAs  
+- GO enrichment analysis  
+- KEGG pathway analysis  
+
+### 4. **Correlation and HAMD Prediction**
+- Spearman correlation with HAMD-17
+- Elastic Net regression (cross-validated α, λ selection)
+- Bootstrap-based feature stability assessment
+
+### 4. **MOMP framework**
+- Classification tasks:
+  - MDD vs. Control
+  - MDD vs. BD
+  - MDD severity stratification (HAMD-17 ≥ 17)
+- 9 ML algorithms: Random Forest, SVM, XGBoost, LightGBM, CatBoost, MLP, AdaBoost, Logistic Regression, GBDT
+- Cross-validation and external validation 
+- NSGA-III optimization
+- Feature interpretation
+
+### 5. **Feature Selection**
+- Hierarchical clustering to reduce multicollinearity
+- Feature gain + SHAP impact ranking
+- Sequential forward selection + DeLong test
+
+### 6. **RT-qPCR Validation**
+- Diagnostic scoring for MDD
+
+### 7. **Network and Pathway Analysis**
+- miRanda + RNAhybrid for target prediction
+- GO and KEGG enrichment
+- Cytoscape network visualization
+---
+
+
+
+## 3.  How to use
+
+0. Prerequisites  
+Ensure you have conda installed. Then set up the Python environment:  
+```bash
+conda create -n mdd-srna python=3.11
+conda activate mdd-srna
+pip install -r requirements.txt
+```
+For R-based scripts, please install R version ≥ 4.4.1 and required packages (see environment.md).  
+
+1. Run Python Scripts
+```bash
+# Example: Calculate fold-change (FC) between MDD and comparison groups based on median expression values:
+python median_mirna.py mirna.csv median.csv
+```
+2. Jupyter Notebooks
+   Launch Jupyter in the activated environment.
+   
+3. Other Scripts: R or Markdown Scripts
+
+## 4. Requirements
+See requirements.txt for a full list. Key packages include:  
+
+* numpy, pandas, scikit-learn, shap, pymoo
+
+* ML libraries: xgboost, lightgbm, catboost
+
+* Plotting: seaborn, matplotlib
+
+
+## Environment.md
+
+Other dependencies include:  
+
+* R (e.g. sva)  
+
+* External tools: miRanda, RNAhybrid, Cytoscape   
+
+See environment.md for full details.  
+
+## References
+- See `references/` for cited software tools and relevant papers.
