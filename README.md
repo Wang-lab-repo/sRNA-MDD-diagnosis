@@ -50,7 +50,7 @@ sRNA-MDD-diagnosis/
 - Elastic Net regression (cross-validated α, λ selection)
 - Bootstrap-based feature stability assessment
 
-### 4. **MOMP framework**
+### 5. **MOMP framework**
 - Classification tasks:
   - MDD vs. Control
   - MDD vs. BD
@@ -60,15 +60,15 @@ sRNA-MDD-diagnosis/
 - NSGA-III optimization
 - Feature interpretation
 
-### 5. **Feature Selection**
+### 6. **Feature Selection**
 - Hierarchical clustering to reduce multicollinearity
 - Feature gain + SHAP impact ranking
 - Sequential forward selection + DeLong test
 
-### 6. **RT-qPCR Validation**
+### 7. **RT-qPCR Validation**
 - Diagnostic scoring for MDD
 
-### 7. **Network and Pathway Analysis**
+### 8. **Network and Pathway Analysis**
 - miRanda + RNAhybrid for target prediction
 - GO and KEGG enrichment
 - Cytoscape network visualization
