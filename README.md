@@ -4,6 +4,7 @@ This repository implements the full analysis pipeline from our study:
 **"Circulating Small RNA Signature for Diagnosis of Major Depressive Disorder"**,  
 mainly including sRNA expression processing, statistical analysis, HAMD-17 severity prediction, and multi-objective model prioritization (MOMP)-based classifier design.
 
+![Overview](Sample results/Fig/Overview.jpg)   
 
 
 
@@ -11,15 +12,15 @@ mainly including sRNA expression processing, statistical analysis, HAMD-17 sever
 ## Project Structure
 ```
 sRNA-MDD-diagnosis/
-├── Scripts & Notebooks/          # Python scripts, Jupyter notebooks or markdown for analysis
-│   ├── Preprocessing/            # Sequence alignment, annotation, and quality control filtering
-│   ├── Differential expression/  # MDD vs. other groups
-│   ├── HAMD regression/          # Spearman correlation and HAMD-17 prediction modeling via Elastic net regression 
-│   ├── MOMP modeling/            # MOMP framework
-│   ├── Feature selection/        # Establishment of optimized circulating sRNA panel
-│   ├── RT-qPCR validation        # Diagnostic scoring
-│   ├── Network and pathway analysis        # Pathway enrichment and visualization
-├── Sample results/                      # Sample output files, figures, or tables
+├── Scripts & Notebooks/                    # Python scripts, Jupyter notebooks or markdown for analysis
+│   ├── Preprocessing/                      # Sequence alignment, annotation, and quality control filtering
+│   ├── Differential expression/            # MDD vs. other groups
+│   ├── HAMD regression/                    # Spearman correlation and HAMD-17 prediction modeling via Elastic net regression 
+│   ├── MOMP modeling/                      # MOMP framework
+│   ├── Feature selection/                  # Establishment of optimized circulating sRNA panel
+│   ├── RT-qPCR validation/                 # Diagnostic scoring
+│   ├── Network and pathway analysis/       # Pathway enrichment and visualization
+├── Sample results/                         # Sample output files, figures, or tables
 ├── References/                   # Literature and tool citations
 ├── README.md                     # Project overview
 ├── Requirements.txt              # Python dependencies (via pip)
@@ -74,7 +75,7 @@ sRNA-MDD-diagnosis/
 
 
 
-## 3.  How to use
+## How to use
 
 0. Prerequisites  
 Ensure you have conda installed. Then set up the Python environment:  
@@ -95,7 +96,7 @@ python median_mirna.py mirna.csv median.csv
    
 3. Other Scripts: R or Markdown Scripts
 
-## 4. Requirements
+## Requirements
 See requirements.txt for a full list. Key packages include:  
 
 * numpy, pandas, scikit-learn, shap, pymoo
