@@ -10,10 +10,8 @@ This document outlines the standalone pipeline used to quantify known miRNAs fro
 cd /path/to/project
 mkdir -p mirna
 
-# Full path list
 find ./clean -name '*.fq' > mirna_name.list
 
-# Short sample names
 find ./clean -name '*.fq' -exec basename {} \; | sed 's/_trimmed\.fq$//' > ./mirna/short_mirna_name.list
 
 ```
@@ -27,25 +25,21 @@ find ./clean -name '*.fq' -exec basename {} \; | sed 's/_trimmed\.fq$//' > ./mir
 
 export PATH=/path/to/anaconda3/bin:$PATH
 
-# Define paths
 base_dir=/path/to/project
 clean_data=$base_dir/clean
 mirna_data=$base_dir/mirna
 genome_dir=/path/to/reference/Homo_sapiens
 mirdeep_dir=/path/to/mirdeep2/bin
 
-# Run in loop for all samples
 cat mirna/short_mirna_name.list | while read sample; do
     echo "Processing $sample..."
 
-    # Mapping reads to genome using mapper.pl
     perl $mirdeep_dir/mapper.pl $clean_data/${sample}.fq \
         -e -h -j -k AGATCGGAAGAGC -l 18 -m \
         -p $genome_dir/genome/genome \
         -s $mirna_data/${sample}_mapped.fa \
         -t $mirna_data/${sample}_vs_genome.arf -v
 
-    # Quantifying known miRNAs using quantifier.pl
     perl $mirdeep_dir/quantifier.pl \
         -p $genome_dir/miRBase/hairpin.fa \
         -m $genome_dir/miRBase/mature.fa \

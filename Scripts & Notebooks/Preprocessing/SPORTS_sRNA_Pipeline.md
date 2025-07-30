@@ -28,7 +28,7 @@ export PATH=/path/to/sports1.1/source:$PATH
 
 base_dir=/path/to/project
 clean_data=$base_dir/clean
-genome_dir=/path/to/reference/Mus_musculus
+genome_dir=/path/to/reference
 output_dir=$base_dir/sports
 
 sports.pl -i $output_dir/sports_name.txt -p 8 \
@@ -48,10 +48,10 @@ sports.pl -i $output_dir/sports_name.txt -p 8 \
 ```bash
 cd /path/to/project
 mkdir -p sports_merge
-find ./sports -type f -name "*R1*output.txt" > R1_sports_name.list
-find ./sports -type f -name "*R1*output.txt" -exec basename {} \; > R1_sports_short_name.list
+find ./sports -type f -name "*output.txt" > sports_name.list
+find ./sports -type f -name "*output.txt" -exec basename {} \; > sports_short_name.list
 
-cat R1_sports_name.list | while read id
+cat sports_name.list | while read id
 do
   file_name=$(basename "$id" | cut -d '_' -f 1)
   awk 'BEGIN {OFS=","} {print $6}' "$id" | sort -u | grep -v "NO_Annotation" >> "./sports_merge/all_anno.csv"
@@ -59,7 +59,7 @@ done
 
 sort -u "./sports_merge/all_anno.csv" -o "./sports_merge/all_anno.csv"
 
-cat R1_sports_name.list | while read id
+cat sports_name.list | while read id
 do
   file_name=$(basename "$id" | cut -d '_' -f 1)
   awk 'BEGIN {OFS=","} {print $2,$6,$4}' "$id" | grep -v "NO_Annotation" > "./sports_merge/1_${file_name}.csv"
@@ -81,7 +81,7 @@ python merge.py
 ## Step 5: Subset rsRNA and tsRNA
 
 ```bash
-cd /path/to/project/sports_R1merge
+cd /path/to/project/sports_merge
 
 mkdir -p rsrna tsrna
 
