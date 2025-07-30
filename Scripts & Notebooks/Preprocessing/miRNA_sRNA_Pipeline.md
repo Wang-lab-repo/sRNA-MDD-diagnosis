@@ -1,4 +1,4 @@
-# miRNA Quantification Pipeline
+# miRNA sRNA Pipeline
 
 This document outlines the standalone pipeline used to quantify known miRNAs from clean small RNA sequencing data using [miRDeep2](https://github.com/rajewsky-lab/mirdeep2).  
 
