@@ -40,7 +40,7 @@ sRNA-MDD-diagnosis/
 - FDR correction (Benjamini-Hochberg)
 - FC > 1.5 or < 0.67, adjusted p < 0.05
 
-### 3. **Enrichment Analysis**
+### 3. **Network and Pathway Analysis**
 - Predicted target genes of sRNAs  
 - GO enrichment analysis  
 - KEGG pathway analysis  
@@ -67,11 +67,7 @@ sRNA-MDD-diagnosis/
 
 ### 7. **RT-qPCR Validation**
 - Diagnostic scoring for MDD
-
-### 8. **Network and Pathway Analysis**
-- miRanda + RNAhybrid for target prediction
-- GO and KEGG enrichment
-- Cytoscape network visualization
+  
 ---
 
 
