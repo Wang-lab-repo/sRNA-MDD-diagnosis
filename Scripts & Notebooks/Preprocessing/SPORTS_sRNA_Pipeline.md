@@ -32,9 +32,11 @@ genome_dir=/path/to/reference/Mus_musculus
 output_dir=$base_dir/sports
 
 sports.pl -i $output_dir/sports_name.txt -p 8 \
--g $genome_dir/genome/hg19/genome \
+-g $genome_dir/genome/genome \
+-m $genome_dir/miRBase/miRBase \
 -r $genome_dir/rRNAdb/human_rRNA \
--t $genome_dir/GtRNAdb/hg19/hg19-tRNAs \
+-t $genome_dir/GtRNAdb/hg19-tRNAs \
+-w $genome_dir/piRBase/piR_human \
 -o $output_dir
 ```
 
@@ -96,7 +98,7 @@ awk '/tRNA-/' "$input_file" >> "$output_file"
 ```
 
 ---
-### Reference Databases
+## Reference Databases
 The following reference databases were used for small RNA annotation:  
 
 Genomic tRNA Database (GtRNAdb v21, hg19):  
