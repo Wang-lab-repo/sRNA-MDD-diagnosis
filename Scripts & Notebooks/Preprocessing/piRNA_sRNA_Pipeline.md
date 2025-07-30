@@ -109,5 +109,5 @@ message("✅ Merged expression matrix saved.")
 | Tool            | Version     |
 |-----------------|-------------|
 | bowtie          | 1.0.0       |
-| Trim Galore     | 1.2.28      |
+| RSEM            | 1.2.28      |
 | samtools        | 1.5         |
