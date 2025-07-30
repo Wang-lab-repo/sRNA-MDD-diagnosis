@@ -1,7 +1,6 @@
 import argparse
 import scipy.stats as stats
 
-# 使用 argparse 获取命令行输入
 def parse_args():
     parser = argparse.ArgumentParser(description="Process gene ontology data and compute Fisher's exact test.")
     parser.add_argument('goa_file', type=str, help="Path to the goa_human.gaf file")
@@ -12,14 +11,12 @@ def parse_args():
     return parser.parse_args()
 
 def main():
-    # 获取命令行参数
+
     args = parse_args()
 
-    # 数据结构初始化
     go = {}
     gog = {}
-    
-    # 读取 goa_human.gaf 文件
+
     with open(args.goa_file, 'r') as f:
         for l in f:
             sp = l.rstrip().split('\t')
@@ -35,8 +32,7 @@ def main():
     gid = ''
     name = ''
     tp = ''
-    
-    # 读取 go.obo 文件
+
     with open(args.obo_file, 'r') as f:
         for l in f:
             l = l.rstrip()
@@ -57,8 +53,7 @@ def main():
     NN = {}
     bgene = {}
     geneid = {}
-    
-    # 读取 uniprot-proteome fasta 文件
+
     with open(args.fasta_file, 'r') as f:
         for l in f:
             l = l.rstrip()
@@ -74,8 +69,7 @@ def main():
     uid = {}
     MM = {}
     gene = {}
-    
-    # 读取 gene-cor1.txt 文件
+
     with open(args.gene_cor_file, 'r', encoding='utf-8') as f:
         for l in f:
             sp = l.rstrip().split('\t')
@@ -95,7 +89,6 @@ def main():
 
     print(len(gene), len(bgene), len(goid), len(go), len(MM), len(NN))
 
-    # 写入输出文件
     with open(args.output_file, 'w') as w:
         for gg in go:
             mm, nn = {}, {}
