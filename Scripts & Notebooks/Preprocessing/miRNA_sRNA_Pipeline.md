@@ -11,10 +11,10 @@ cd /path/to/project
 mkdir -p mirna
 
 # Full path list
-find ./clean -name '*_trimmed.fq' > mirna_name.list
+find ./clean -name '*.fq' > mirna_name.list
 
 # Short sample names
-find ./clean -name '*_trimmed.fq' -exec basename {} \; | sed 's/_trimmed\.fq$//' > ./mirna/short_mirna_name.list
+find ./clean -name '*.fq' -exec basename {} \; | sed 's/_trimmed\.fq$//' > ./mirna/short_mirna_name.list
 
 ```
 
