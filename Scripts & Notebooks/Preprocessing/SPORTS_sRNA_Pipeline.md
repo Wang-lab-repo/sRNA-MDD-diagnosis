@@ -73,7 +73,7 @@ done
 ## Step 4: Merge Into Final Matrix
 
 ```bash
-python merge.py
+python sports_merge.py
 ```
 
 ---
