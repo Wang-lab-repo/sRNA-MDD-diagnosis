@@ -119,3 +119,8 @@ See environment.md for full details.
 
 ## References
 - See `references/` for cited software tools and relevant papers.
+
+## License
+**sRNA-MDD-Diagnostic** is released as open-source software under the **Apache License 2.0**.  
+It is part of the research project:  
+**"Circulating Small RNA Signature for Diagnosis of Major Depressive Disorder"**.
