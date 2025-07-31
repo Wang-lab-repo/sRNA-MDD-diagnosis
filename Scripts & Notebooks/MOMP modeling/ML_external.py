@@ -9,7 +9,6 @@ from sklearn.metrics import (
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier
-from sklearn.naive_bayes import GaussianNB
 from sklearn.neural_network import MLPClassifier
 import xgboost as xgb
 import lightgbm as lgb

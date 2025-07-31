@@ -46,13 +46,13 @@ cmap = ListedColormap(gradient_colors)
 for name in best_models.keys():
     print(f"Generating SHAP plot for {name} from CSV...")
 
-    input_path_csv = f'{output_dir}allrna_{name}_shap_values.csv'
+    input_path_csv = f'{output_dir}rna_{name}_shap_values.csv'
     shap_values_selected = pd.read_csv(input_path_csv)
 
     plt.figure()
     shap.summary_plot(shap_values_selected.values, X_test, max_display=5, show=False, cmap = cmap)
 
-    output_path_pdf = f'{output_dir}allrna_{name}_shap.pdf'
+    output_path_pdf = f'{output_dir}rna_{name}_shap.pdf'
     plt.savefig(output_path_pdf, format='pdf')
     plt.close()
     print(f"SHAP plot for {name} saved to {output_path_pdf}")

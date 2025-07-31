@@ -9,7 +9,6 @@ from sklearn.metrics import (
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier
-from sklearn.naive_bayes import GaussianNB
 from sklearn.neural_network import MLPClassifier
 import xgboost as xgb
 import lightgbm as lgb
@@ -17,7 +16,7 @@ from catboost import CatBoostClassifier
 
 
 
-mirna = pd.read_csv(r'mirna.csv', encoding='GBK')
+mirna = pd.read_csv('mirna.csv', encoding='GBK')
 train_mirna = mirna[mirna.iloc[:, 0].str.startswith('train')]
 test_mirna = mirna[mirna.iloc[:, 0].str.startswith('test')]
 
