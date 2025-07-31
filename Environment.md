@@ -86,11 +86,11 @@ Ensure the following package is installed: `notebook` or `jupyterlab`.
 ## 5. Target Prediction & Enrichment Analysis
 
 ### miRanda
-- **Version**: v3.3a
+- **Version**: v3.3a (based on Python 3.9)
 - **Purpose**: miRNA target prediction
 
 ### RNAhybrid
-- **Version**: v2.1.2
+- **Version**: v2.1.2 (based on Python 3.9)
 - **Purpose**: Free energy-based target binding prediction
 
 ---
