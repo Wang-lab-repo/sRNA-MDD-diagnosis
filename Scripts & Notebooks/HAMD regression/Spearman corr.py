@@ -2,7 +2,7 @@ import pandas as pd
 from scipy.stats import spearmanr
 from statsmodels.stats.multitest import multipletests
 
-# take mirna for example
+# take miRNA for example
 data = pd.read_csv('mirna.csv', index_col=0)
 hamd_scores = data.iloc[0]
 mirna_data = data.iloc[1:]
