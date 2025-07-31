@@ -108,7 +108,7 @@ See requirements.txt for a full list. Key packages include:
 
 Other dependencies include:  
 
-* R (e.g. sva)  
+* R (e.g. ggplot2)  
 
 * External tools: miRanda, RNAhybrid, Cytoscape   
 
