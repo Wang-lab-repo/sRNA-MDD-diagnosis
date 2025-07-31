@@ -6,31 +6,32 @@
 
 ## 1. Python Environment
 
-- **Version**: Python 3.11.5
+- **Version**: Python 3.11
 - **Recommended tool**: conda or venv
 
 ```bash
-conda create -n mdd-srna python=3.11.5
+conda create -n mdd-srna python=3.11
 conda activate mdd-srna
 pip install -r requirements.txt
 ```
 
 ### Key Python Packages
 
-| Package         | Recommended Version | Description                                      |
-|----------------|---------------------|--------------------------------------------------|
-| `pandas`       | ≥1.5.3              | Data wrangling and I/O                           |
-| `numpy`        | ≥1.23               | Numerical operations                             |
-| `scikit-learn` | ≥1.0.2              | Machine learning modeling and validation         |
-| `xgboost`      | ≥1.7                | XGBoost classifier                               |
-| `lightgbm`     | ≥3.3                | LightGBM classifier                              |
-| `catboost`     | ≥1.2                | CatBoost classifier                              |
-| `shap`         | ≥0.42               | SHAP value-based feature interpretation          |
-| `matplotlib`   | ≥3.6                | Plotting and visualization                       |
-| `seaborn`      | ≥0.12               | Statistical plots and heatmaps                   |
-| `pymoo`        | ≥0.6.1.3            | NSGA-III multi-objective optimization            |
-| `scipy`        | ≥1.10               | Statistical testing                              |
-| `statsmodels`  | ≥0.13               | Statistical modeling and inference               |
+| Package        | Description                                     |
+| -------------- | ----------------------------------------------- |
+| `numpy`        | Numerical computing                             |
+| `pandas`       | Data wrangling and I/O                          |
+| `scikit-learn` | Machine learning algorithms and evaluation      |
+| `xgboost`      | Gradient boosting classifier                    |
+| `lightgbm`     | Gradient boosting framework                     |
+| `catboost`     | Gradient boosting with categorical features     |
+| `shap`         | SHAP values for model explainability            |
+| `matplotlib`   | Plotting and visualization                      |
+| `seaborn`      | Statistical data visualization                  |
+| `pymoo`        | Multi-objective optimization toolkit (NSGA-III) |
+| `joblib`       | Model serialization and parallel processing     |
+| `scipy`        | Scientific computing and statistical functions  |
+| `statsmodels`  | Statistical modeling and inference              |
 
 ---
 
@@ -52,30 +53,33 @@ Ensure the following package is installed: `notebook` or `jupyterlab`.
 
 ### Key R Packages
 
-| Package              | Description                                    |
-|----------------------|------------------------------------------------|
-| `sva`                | Batch effect correction                        |
-| `ggplot2`            | Data visualization                             |
-| `clusterProfiler`    | GO/KEGG enrichment analysis                    |
-| `org.Hs.eg.db`       | Gene annotation database                       |
+| Package                             | Description                             |
+| ----------------------------------- | --------------------------------------- |
+| `TxDb.Hsapiens.UCSC.hg38.knownGene` | Gene annotation database                |
+| `org.Hs.eg.db`                      | Gene ID mapping                         |
+| `clusterProfiler`                   | Gene enrichment analysis                |
+| `enrichplot`                        | Enrichment plot visualization           |
+| `ggplot2`                           | Data visualization                      |
+| `pheatmap`                          | Heatmap visualization                   |
+
 
 ---
 
 ## 4. Small RNA Annotation & Preprocessing Tools
 
 ### miRDeep2
-- **Version**: v2.0.1.2
+- **Version**: v2.0.1.3
 - **Purpose**: Identification of miRNAs (precursor and mature)
 - **Platform**: Linux command-line (Perl required)
 
 ### Bowtie
-- **Version**: v1.3
-- **Purpose**: Sequence alignment for piRNA, tsRNA, rsRNA
-- **Platform**: CLI, integrated in SPORTS1.1
+- **Version**: 1.0.0
+- **Purpose**: Sequence alignment for piRNA (tsRNA, rsRNA)
+- **Platform**: Linux command-line, integrated in SPORTS1.1
 
 ### SPORTS1.1
 - **Purpose**: Annotation of tsRNA and rsRNA
-- **Dependencies**: Bowtie, Perl, Python 2/3
+- **Dependencies**: Bowtie, Perl, Python 3
 
 ---
 
@@ -84,12 +88,10 @@ Ensure the following package is installed: `notebook` or `jupyterlab`.
 ### miRanda
 - **Version**: v3.3a
 - **Purpose**: miRNA target prediction
-- **Platform**: Linux command-line
 
 ### RNAhybrid
 - **Version**: v2.1.2
 - **Purpose**: Free energy-based target binding prediction
-- **Platform**: CLI
 
 ---
 
@@ -99,19 +101,3 @@ Ensure the following package is installed: `notebook` or `jupyterlab`.
 - **Version**: v3.10.3
 - **Purpose**: Visualization of gene-sRNA-target-GO networks
 - **Platform**: Desktop GUI for Windows/macOS/Linux
-
----
-
-## Summary Table
-
-| Tool/Language     | Type          | Platform         | Purpose                                   |
-|------------------|---------------|------------------|-------------------------------------------|
-| Python 3.11       | Language      | Scripting/Modeling| Core analysis pipeline                    |
-| R 4.4.1           | Language      | Scripting         | Enrichment, plots                         |
-| miRDeep2          | Software      | Linux/CLI         | miRNA annotation                          |
-| Bowtie            | Software      | Linux/CLI         | Read mapping                              |
-| SPORTS1.1         | Software      | CLI               | tsRNA/rsRNA annotation                    |
-| miRanda           | Software      | CLI               | Target gene prediction                    |
-| RNAhybrid         | Software      | CLI               | Target binding energy calculation         |
-| Cytoscape         | Desktop GUI   | Cross-platform    | Network visualization                     |
-
