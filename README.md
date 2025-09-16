@@ -1,7 +1,7 @@
 # 🧠 sRNA-MDD-Diagnostic
 
 This repository implements the full analysis pipeline from our study:  
-**"Circulating Small RNA Signature for Diagnosis of Major Depressive Disorder"**,  
+**"Circulating Small RNAome signature for Noninvasive Diagnosis of Major Depressive Disorder"**,  
 mainly including sRNA expression processing, statistical analysis, HAMD-17 severity prediction, and multi-objective model prioritization (MOMP)-based classifier design.
 
 ![Overview](./Overview.jpg)   
@@ -120,4 +120,4 @@ See environment.md for full details.
 ## License
 **sRNA-MDD-Diagnostic** is released as open-source software under the **Apache License 2.0**.  
 It is part of the research project:  
-**"Circulating Small RNA Signature for Diagnosis of Major Depressive Disorder"**.
+**"Circulating Small RNAome signature for Noninvasive Diagnosis of Major Depressive Disorder"**.
