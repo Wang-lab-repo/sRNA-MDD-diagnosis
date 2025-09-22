@@ -44,7 +44,7 @@ def main():
     dist_array = squareform(distance_matrix)
     dist_linkage = hierarchy.linkage(dist_array, method='ward')
 
-    cluster_ids = hierarchy.fcluster(dist_linkage, 0.5, criterion="distance")
+    cluster_ids = hierarchy.fcluster(dist_linkage, 0.6, criterion="distance")
     feature_names = df_feature.columns.tolist()
     cluster_data = pd.DataFrame({'RNA_feature': feature_names, 'ClusterID': cluster_ids})
     output_csv = result_path + 'mdd_feature_clusters.csv'
