@@ -59,15 +59,3 @@ imp_df = pd.merge(shap_imp_df, tg_imp_df, on='Analytes')
 imp_df['Ensemble_cv'] = (imp_df['ShapValues_cv'] + imp_df['TotalGain_cv']) / 2
 imp_df.sort_values(by='TotalGain_cv', ascending=False, inplace=True)
 imp_df.to_csv(result_path + 'mdd_Importance483.csv', index=False)
-
-def get_top_features_by_prop(df, prop=0.9):
-    score = 0
-    i = 0
-    while score < prop and i < len(df):
-        score += df['Ensemble_cv'].iloc[i]
-        i += 1
-    return i
-
-top_n = get_top_features_by_prop(imp_df, top_prop=0.9)
-top_features_df = imp_df.iloc[:top_n]
-top_features_df.to_csv(result_path + 'Top_90_InfoGain_features.csv', index=False)
