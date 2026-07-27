@@ -32,7 +32,7 @@ This repository contains the complete analysis pipeline for a multicenter diagno
 │   │   ├── filter_by_quality.py
 │   │   ├── mirna_merge.py
 │   │   └── sports_merge.py
-│   ├── 02_data_integration/      # Batch merging, CPM normalization, cohort splitting
+│   ├── 02_data_integration/      # CPM normalization, cohort splitting
 │   │   └── integrate_batches.py
 │   ├── 03_differential_expression/  # Differential expression analysis
 │   │   ├── DE_code.md
